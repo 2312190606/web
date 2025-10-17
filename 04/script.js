@@ -51,9 +51,19 @@ function makePassword() {
   const includeNumbers = numbersCheckbox.checked;
   const includeSymbols = symbolsCheckbox.checked;
 
+  const controlsEl = document.querySelector('.controls');
   if (!includeUppercase && !includeLowercase && !includeNumbers && !includeSymbols) {
+    // visual flash on controls to indicate error
+    controlsEl.classList.add('controls-error');
+    // remove the error class after a short time so it flashes
+    setTimeout(() => {
+      controlsEl.classList.remove('controls-error');
+    }, 1400);
     alert("Please select at least one char type.");
     return;
+  } else {
+    // ensure no lingering error style
+    controlsEl.classList.remove('controls-error');
   }
 
   const newPassword = createRandomPassword(

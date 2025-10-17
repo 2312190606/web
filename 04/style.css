@@ -66,6 +66,10 @@ body{
   cursor:pointer;
   font-size:18px;
 }
+.copy-btn:hover{
+  color:#2a5670; /* hover color deeper */
+  background:rgba(42,86,112,0.06);
+}
 
 .controls{
   background:#f6fafc;
@@ -93,11 +97,21 @@ body{
   box-shadow:0 8px 18px rgba(66,90,123,0.25);
   cursor:pointer;
 }
+.generate-btn i{margin-right:10px}
 
 .strength{margin-top:20px}
 .strength-text{display:flex;justify-content:space-between;align-items:center;color:#294a56;margin-bottom:8px}
 .strength-bar-wrap{height:12px;background:#eef6f8;border-radius:12px;overflow:hidden}
 .strength-bar{height:100%;width:40%;background:#fbd38d;border-radius:12px}
+
+.strength-bar{
+  transition: width 360ms cubic-bezier(.2,.9,.2,1), background-color 240ms ease;
+}
+
+.controls-error{
+  border:2px solid #fc8181 !important;
+  box-shadow:0 6px 18px rgba(252,129,129,0.12) !important;
+}
 
 @media(max-width:480px){
   .card{width:92vw;padding:22px}
