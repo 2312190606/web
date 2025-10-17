@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>测验 Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- 开始页 -->
+    <div class="screen active" id="start-screen">
+      <h1 class="title-accent">Quiz Time!</h1>
+      <p class="subtitle">Test your knowledge with these fun questions</p>
+      <div class="start-wrap">
+        <button id="start-btn" class="btn-orange">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- 题目页 -->
+    <div class="screen" id="quiz-screen">
+      <h1 id="question-text" class="question-title">Question text</h1>
+      <div class="quiz-header">
+        <div class="meta-left">Question <span id="current-question">0</span> of <span id="total-questions">0</span></div>
+        <div class="meta-right">Score: <span id="score">0</span>/<span id="max-score">0</span></div>
+      </div>
+
+      <div class="quiz-body">
+        <div id="answers-container" class="answers-container"></div>
+      </div>
+
+      <div class="progress-wrap">
+        <div id="progress" class="progress-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- 结果页 -->
+    <div class="screen" id="result-screen">
+      <h1 class="title-accent">Quiz Results</h1>
+      <div class="result-box">
+        <p class="score-text">You scored <strong id="final-score">0</strong> out of <span id="max-score-2">0</span></p>
+        <p id="result-message" class="result-message">Result message</p>
+      </div>
+      <div class="start-wrap">
+        <button id="restart-btn" class="btn-orange">Restart Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
