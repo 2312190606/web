@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜谱搜索器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>菜谱搜索器</h1>
+            <p class="subtitle">探索来自世界各地的美味菜谱</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索菜谱或关键词...">
+                    <button id="search-btn">搜索</button>
+                </div>
+            </div>
+        </header>
+        
+        <section class="results-section">
+            <h2 class="section-title" id="result-heading">搜索菜谱或关键词</h2>
+            <div class="meals-container" id="meals">
+                <!-- 初始状态为空，搜索后才会显示内容 -->
+            </div>
+            <div class="error-container hidden" id="error-container"></div>
+        </section>
+        
+        <div class="meal-details hidden" id="meal-details">
+            <div class="meal-details-content">
+                <button class="back-btn" id="back-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <!-- 菜谱详情会动态填充 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

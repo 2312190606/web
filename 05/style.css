@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff7e5f;
+    --primary-dark: #eb5e41;
+    --primary-light: #ffb199;
+    --secondary: #0ba360;
+    --text-dark: #333333;
+    --text-light: #f8f9fa;
+    --background: #ffffff;
+    --background-light: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+#search-btn {
+    padding: 0 25px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+#search-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.results-section {
+    margin-top: 40px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.meal {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.meal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.meal img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.meal-info {
+    padding: 15px;
+}
+
+.meal-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.meal-category {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.error-container {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.meal-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 20px;
+}
+
+.meal-details.hidden {
+    display: none;
+}
+
+.meal-details-content {
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    color: var(--primary);
+}
+
+.meal-details-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.meal-details-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.meal-details-category {
+    margin-bottom: 20px;
+}
+
+.meal-details-category span {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.meal-details-instructions,
+.meal-details-ingredients {
+    margin-bottom: 25px;
+}
+
+.meal-details-instructions h3,
+.meal-details-ingredients h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+.meal-details-instructions p {
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.ingredients-list {
+    list-style-type: none;
+}
+
+.ingredients-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.ingredients-list li i {
+    color: var(--secondary);
+    margin-right: 10px;
+}
+
+.youtube-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.youtube-link:hover {
+    background-color: #cc0000;
+}
+
+.youtube-link i {
+    margin-right: 8px;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* 初始状态样式 */
+.initial-state {
+    text-align: center;
+    padding: 60px 40px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.initial-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    opacity: 0.7;
+}
+
+.initial-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.initial-state p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .meals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .meal-details-title {
+        font-size: 1.6rem;
+    }
+    
+    .meal-details-content {
+        padding: 20px;
+        margin: 10px;
+    }
+}
