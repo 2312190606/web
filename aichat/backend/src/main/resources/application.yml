@@ -22,4 +22,4 @@ knife4j:
           - com.shliu.aichat.controller
 
 ai:
-  apiKey: 42446665-b631-42b1-8eb6-3ed6975fe97d
+  apiKey: 
